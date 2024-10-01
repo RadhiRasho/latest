@@ -1,0 +1,21 @@
+{
+  "name": "latest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": "bin/index.js",
+  "keywords": ["latest", "npm", "version", "up-to-date"],
+  "author": "Radhi Rasho",
+  "license": "ISC",
+  "description": "Checks latest version of a package",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22.7.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "npm": "6"
+  }
+}
