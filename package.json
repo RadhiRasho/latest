@@ -1,6 +1,6 @@
 {
 	"name": "latest",
-	"main": "index.ts",
+	"main": "dist/index.js",
 	"version": "1.0.0",
 	"author": "Radhi Rasho",
 	"description": "Checks latest version of a package",
@@ -14,10 +14,16 @@
 	"keywords": ["latest", "npm", "version", "up-to-date"],
 	"license": "ISC",
 	"type": "module",
+	"scripts": {
+		"build": "bun build ./index.ts ./latest.ts --outdir ./dist"
+	},
 	"devDependencies": {
-		"@types/node": "^22.7.4"
+		"@types/node": "latest"
 	},
 	"peerDependencies": {
-		"typescript": "^5.0.0"
+		"typescript": "latest"
+	},
+	"dependencies": {
+		"latest": "."
 	}
 }
