@@ -1,4 +1,15 @@
-import { semverParser } from "./utils";
+function semverParser(version: string) {
+	const versions = version.split(".");
+	const semverCompliant = versions.length < 4;
+
+	const [major, minor, patch, ...rest] = versions;
+
+	if (semverCompliant) {
+		return [major, minor, patch];
+	}
+
+	return [major, minor, patch, rest.join(".")];
+}
 
 enum Registries {
 	npm = "https://registry.npmjs.org",
@@ -17,14 +28,14 @@ export async function latest(name: string | unknown, options?: LatestOptions) {
 	const data = await res.json();
 
 	if (data.error) {
-		return data.error;
+		return { error: data.error };
 	}
 
 	if (options?.all) {
-		return data["dist-tags"];
+		return { value: data["dist-tags"] };
 	}
 
-	return data["dist-tags"].latest;
+	return { value: data["dist-tags"].latest };
 }
 
 type PackageJsonSchema = {
@@ -41,16 +52,21 @@ export async function checkUpdate(
 ) {
 	if (pkg?.name) {
 		const data = await latest(pkg?.name, options?.latest);
+		const { value, error } = data;
 
-		if (data) {
-			const versions = Object.keys(data);
+		if (error) {
+			return "Ran into an error";
+		}
+
+		if (value) {
+			const versions = Object.keys(value);
 
 			const parsedPkgVersion = semverParser(pkg.version as string);
 			let allSame = false;
 
 			if (options?.latest?.all) {
 				allSame = versions.every((version) => {
-					const parsedVersion = semverParser(data[version]);
+					const parsedVersion = semverParser(value[version]);
 					return (
 						parsedVersion[0] === parsedPkgVersion[0] &&
 						parsedVersion[1] === parsedPkgVersion[1] &&
@@ -58,7 +74,7 @@ export async function checkUpdate(
 					);
 				});
 			} else {
-				const parsedVersion = semverParser(data);
+				const parsedVersion = semverParser(value);
 
 				console.log(parsedPkgVersion);
 				console.log(parsedVersion);
@@ -77,5 +93,3 @@ export async function checkUpdate(
 		}
 	}
 }
-
-console.log(await checkUpdate(await Bun.file("./package.json").json()));

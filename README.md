@@ -1,15 +1,4 @@
-# latest
+# bun-latest
+Inspired by [node-latest](https://github.com/bahamas10/node-latest) that I ran into without realizing and noticed it was dependent on npm, which wasn't really necessary so I found a way to use fetch and have similar functionality, plus some.
 
-To install dependencies:
-
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run index.js
-```
-
-This project was created using `bun init` in bun v1.1.29. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Work in progress, will publish on npm when finished
