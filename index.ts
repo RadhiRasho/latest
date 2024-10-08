@@ -32,14 +32,17 @@ export async function latest(name: string | unknown, options?: LatestOptions) {
 	}
 
 	if (options?.all) {
-		return { value: data["dist-tags"] };
+		return { name, value: data["dist-tags"] };
 	}
 
-	return { value: data["dist-tags"].latest };
+	return { name, value: data["dist-tags"].latest };
 }
 
 type PackageJsonSchema = {
-	[key: string]: string | Map<string, string>[] | unknown;
+	name: string;
+	/** @example "1.1.1" | "1.2.12-abc" */
+	version: `${string}.${string}.${string}`;
+	[key: string]: string | Map<string, string>[] | unknown[] | unknown;
 };
 
 type CheckUpdateOptions = {

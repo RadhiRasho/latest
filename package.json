@@ -1,29 +1,27 @@
 {
-	"name": "latest",
+	"name": "@radhirasho/latest",
 	"main": "dist/index.js",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Radhi Rasho",
 	"description": "Checks latest version of a package",
+	"publishConfig": {
+		"access": "public"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/RadhiRasho/bun-latest"
 	},
 	"bin": {
-		"latest": "./dist/latest.js"
+		"latest": "./bin/latest.js"
 	},
 	"keywords": ["latest", "npm", "version", "up-to-date"],
 	"license": "ISC",
 	"type": "module",
 	"scripts": {
-		"build": "bun build ./index.ts ./latest.ts --outdir ./dist"
+		"build": "bun build ./index.ts --outdir ./dist && bun build ./latest.ts --outdir ./bin",
+		"prepublish": "bun run build"
 	},
 	"devDependencies": {
-		"@types/node": "latest"
-	},
-	"peerDependencies": {
 		"typescript": "latest"
-	},
-	"dependencies": {
-		"latest": "."
 	}
 }

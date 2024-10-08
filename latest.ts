@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { latest } from ".";
+import { latest } from "./index.ts";
 
 const packages = process?.argv.slice(2);
 
@@ -19,6 +19,7 @@ for (const pkg of packages) {
 
 process.on("exit", async () => {
 	for (const pkg of packages) {
+		console.log("IT'sa me");
 		console.log("%s: %s", pkg, versions.get(pkg));
 	}
 	process.exit(code);
