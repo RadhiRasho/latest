@@ -10,10 +10,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/RadhiRasho/latest"
+		"url": "git+https://github.com/RadhiRasho/latest.git"
 	},
 	"bin": {
-		"latest": "./bin/latest.js"
+		"latest": "dist/latest.js"
 	},
 	"keywords": [
 		"latest",
@@ -24,7 +24,7 @@
 	"type": "module",
 	"types": "dis/index.d.ts",
 	"scripts": {
-		"prepublish": "tsc"
+		"prepublish": "tsc ./latest ./index --outdir dist"
 	},
 	"devDependencies": {
 		"@types/node": "latest",
