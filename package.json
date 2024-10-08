@@ -24,7 +24,7 @@
 	"type": "module",
 	"types": "dis/index.d.ts",
 	"scripts": {
-		"prepublish": "tsc ./latest ./index --outdir dist"
+		"prepublish": "tsc"
 	},
 	"devDependencies": {
 		"@types/node": "latest",
