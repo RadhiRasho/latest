@@ -14,10 +14,14 @@
 		"skipLibCheck": true,
 		"noFallthroughCasesInSwitch": true,
 		"declaration": true,
-		"outDir": "dist",
+		"baseUrl": ".",
+		"outDir": "./dist",
 		// Some stricter flags (disabled by default)
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"noPropertyAccessFromIndexSignature": false
-	}
+	},
+	"include": [
+		"./src"
+	]
 }
