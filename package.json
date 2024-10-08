@@ -1,7 +1,7 @@
 {
 	"name": "@radhirasho/latest",
 	"main": "dist/index.js",
-	"version": "1.0.9",
+	"version": "1.0.10",
 	"author": "Radhi Rasho",
 	"license": "MIT",
 	"description": "Checks latest version of a package",
@@ -15,8 +15,12 @@
 	"bin": {
 		"latest": "./bin/latest.js"
 	},
-	"keywords": ["latest", "npm", "version", "up-to-date"],
-
+	"keywords": [
+		"latest",
+		"npm",
+		"version",
+		"up-to-date"
+	],
 	"type": "module",
 	"types": "dis/index.d.ts",
 	"scripts": {
