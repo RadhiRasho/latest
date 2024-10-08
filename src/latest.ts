@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import { latest } from "./index";
-
+import { latest } from ".";
 
 const packages = process?.argv.slice(2);
 
