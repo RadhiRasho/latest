@@ -1,7 +1,7 @@
 {
 	"name": "@radhirasho/latest",
 	"main": "dist/index.js",
-	"version": "1.0.1",
+	"version": "1.0.3",
 	"author": "Radhi Rasho",
 	"description": "Checks latest version of a package",
 	"publishConfig": {
@@ -9,7 +9,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/RadhiRasho/bun-latest"
+		"url": "https://github.com/RadhiRasho/latest"
 	},
 	"bin": {
 		"latest": "./bin/latest.js"
@@ -18,8 +18,8 @@
 	"license": "ISC",
 	"type": "module",
 	"scripts": {
-		"build": "bun build ./index.ts --outdir ./dist && bun build ./latest.ts --outdir ./bin",
-		"prepublish": "bun run build"
+		"build": "tsc ./index ./latest --outdir ./dist",
+		"prepublish": "npm run build"
 	},
 	"devDependencies": {
 		"typescript": "latest"
