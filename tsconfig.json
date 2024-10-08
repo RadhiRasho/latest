@@ -14,8 +14,7 @@
 		"skipLibCheck": true,
 		"noFallthroughCasesInSwitch": true,
 		"declaration": true,
-		"baseUrl": ".",
-		"outDir": "./dist",
+		"outDir": "dist",
 		// Some stricter flags (disabled by default)
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
