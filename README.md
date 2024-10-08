@@ -126,14 +126,6 @@ To build the project, run:
 npm run build
 ```
 
-### Running Tests
-
-To run tests, use:
-
-```sh
-npm test
-```
-
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request on [GitHub](https://github.com/RadhiRasho/latest).
@@ -145,10 +137,6 @@ This project is licensed under the ISC License. See the LICENSE file for details
 ## Author
 
 Radhi Rasho
-
-## Repository
-
-[GitHub Repository](https://github.com/RadhiRasho/latest)
 
 # Inspiration
 Inspired by [node-latest](https://github.com/bahamas10/node-latest) that I ran into without realizing and noticed it was dependent on npm, which wasn't really necessary so I found a way to use fetch and have similar functionality, plus some.
