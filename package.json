@@ -1,9 +1,13 @@
 {
 	"name": "@radhirasho/latest",
 	"main": "dist/index.js",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"author": "Radhi Rasho",
-	"licenses": [{ "type": "MIT" }],
+	"licenses": [
+		{
+			"type": "MIT"
+		}
+	],
 	"description": "Checks latest version of a package",
 	"publishConfig": {
 		"access": "public"
@@ -15,7 +19,12 @@
 	"bin": {
 		"latest": "./bin/latest.js"
 	},
-	"keywords": ["latest", "npm", "version", "up-to-date"],
+	"keywords": [
+		"latest",
+		"npm",
+		"version",
+		"up-to-date"
+	],
 	"license": "ISC",
 	"type": "module",
 	"types": "dis/index.d.ts",
