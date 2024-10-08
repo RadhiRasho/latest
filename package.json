@@ -17,11 +17,12 @@
 	"keywords": ["latest", "npm", "version", "up-to-date"],
 	"license": "ISC",
 	"type": "module",
+	"types": "dis/index.d.ts",
 	"scripts": {
-		"build": "tsc ./index ./latest --outdir ./dist",
-		"prepublish": "npm run build"
+		"prepublish": "tsc"
 	},
 	"devDependencies": {
+		"@types/node": "latest",
 		"typescript": "latest"
 	}
 }
