@@ -1,7 +1,7 @@
 {
 	"name": "@radhirasho/latest",
 	"main": "dist/index.js",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"author": "Radhi Rasho",
 	"description": "Checks latest version of a package",
 	"publishConfig": {
