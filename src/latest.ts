@@ -8,19 +8,21 @@ const versions = new Map<string, string>();
 let code = 0;
 
 async function main() {
-	for (const pkg of packages) {
+	const promises = packages.map(async (pkg) => {
 		const { value, error } = await latest(pkg);
 
 		if (error) {
 			code++;
 			console.error(`Error fetching latest version for ${pkg}: ${error}`);
-			continue;
+			return;
 		}
 
-		if (value !== null || value !== undefined) {
+		if (value !== null && value !== undefined) {
 			versions.set(pkg, value);
 		}
-	}
+	});
+
+	await Promise.all(promises);
 }
 
 main().catch((err) => {
