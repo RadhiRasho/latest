@@ -31,6 +31,10 @@ export async function latest(name: string | unknown, options?: LatestOptions) {
 		return { error: data.error };
 	}
 
+	if (!("dist-tags" in data)) {
+		return { error: "The fetched data did not include a list of versions" };
+	}
+
 	if (options?.all) {
 		return { name, value: data["dist-tags"] };
 	}

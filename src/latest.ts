@@ -11,29 +11,26 @@ async function main() {
 	for (const pkg of packages) {
 		const { value, error } = await latest(pkg);
 
-		versions.set(pkg, value);
-
 		if (error) {
 			code++;
+			console.error(`Error fetching latest version for ${pkg}: ${error}`);
+			continue;
+		}
+
+		if (value !== null || value !== undefined) {
+			versions.set(pkg, value);
 		}
 	}
-
-	process.on("exit", () => {
-		for (const pkg of packages) {
-			console.log("%s: %s", pkg, versions.get(pkg));
-		}
-		process.exit(code);
-	});
 }
 
 main().catch((err) => {
-	console.error(err);
+	console.error(`Fatal error: ${err.message}`);
 	process.exit(1);
 });
 
 process.on("exit", async () => {
 	for (const pkg of packages) {
-		console.log("%s: %s", pkg, versions.get(pkg));
+		if (versions.has(pkg)) console.log("%s: %s", pkg, versions.get(pkg));
 	}
 	process.exit(code);
 });
