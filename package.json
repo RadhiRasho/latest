@@ -1,7 +1,7 @@
 {
 	"name": "@radhirasho/latest",
 	"main": "./dist/index.js",
-	"version": "1.0.18",
+	"version": "1.0.19",
 	"author": "Radhi Rasho",
 	"license": "MIT",
 	"description": "Checks latest version of a package",
