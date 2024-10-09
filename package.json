@@ -1,7 +1,7 @@
 {
 	"name": "@radhirasho/latest",
 	"main": "./dist/index.js",
-	"version": "1.0.17",
+	"version": "1.0.18",
 	"author": "Radhi Rasho",
 	"license": "MIT",
 	"description": "Checks latest version of a package",
@@ -16,7 +16,12 @@
 	"bin": {
 		"latest": "./dist/latest.js"
 	},
-	"keywords": ["latest", "npm", "version", "up-to-date"],
+	"keywords": [
+		"latest",
+		"npm",
+		"version",
+		"up-to-date"
+	],
 	"scripts": {
 		"build": "tsc --p ./tsconfig.json",
 		"prepublish": "npm run build"
