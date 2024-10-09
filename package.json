@@ -1,33 +1,28 @@
 {
-	"name": "@radhirasho/latest",
-	"main": "./dist/index.js",
-	"version": "1.0.20",
 	"author": "Radhi Rasho",
-	"license": "MIT",
+	"bin": {
+		"latest": "./dist/latest.js"
+	},
 	"description": "Checks latest version of a package",
+	"devDependencies": {
+		"@types/node": "latest",
+		"typescript": "latest"
+	},
+	"keywords": ["latest", "npm", "version", "up-to-date"],
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"name": "@radhirasho/latest",
 	"publishConfig": {
 		"access": "public"
 	},
-	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/RadhiRasho/latest.git"
 	},
-	"bin": {
-		"latest": "./dist/latest.js"
-	},
-	"keywords": [
-		"latest",
-		"npm",
-		"version",
-		"up-to-date"
-	],
 	"scripts": {
 		"build": "tsc --p ./tsconfig.json",
 		"prepublish": "npm run build"
 	},
-	"devDependencies": {
-		"@types/node": "latest",
-		"typescript": "latest"
-	}
+	"type": "module",
+	"version": "1.0.20"
 }
