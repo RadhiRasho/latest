@@ -1,7 +1,7 @@
 {
 	"author": "Radhi Rasho",
 	"bin": {
-		"latest": "./dist/latest.js"
+		"latest": "./dist/latest"
 	},
 	"description": "Checks latest version of a package",
 	"devDependencies": {
@@ -10,7 +10,7 @@
 	},
 	"keywords": ["latest", "npm", "version", "up-to-date"],
 	"license": "MIT",
-	"main": "./dist/index.js",
+	"main": "./dist/index",
 	"name": "@radhirasho/latest",
 	"publishConfig": {
 		"access": "public"
@@ -23,7 +23,7 @@
 		"build": "tsc --p ./tsconfig.json",
 		"prepublish": "npm run build"
 	},
-	"types": "./types",
+	"types": "./dist/index",
 	"type": "module",
 	"version": "1.0.21"
 }
