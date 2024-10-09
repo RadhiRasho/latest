@@ -8,7 +8,12 @@
 		"@types/node": "latest",
 		"typescript": "latest"
 	},
-	"keywords": ["latest", "npm", "version", "up-to-date"],
+	"keywords": [
+		"latest",
+		"npm",
+		"version",
+		"up-to-date"
+	],
 	"license": "MIT",
 	"main": "./dist/index.js",
 	"name": "@radhirasho/latest",
@@ -24,5 +29,5 @@
 		"prepublish": "npm run build"
 	},
 	"type": "module",
-	"version": "1.0.20"
+	"version": "1.0.21"
 }
