@@ -16,15 +16,17 @@ enum Registries {
 	yarn = "https://registry.yarnpkg.com",
 }
 
-type LatestOptions = {
+export type LatestOptions = {
 	all?: boolean;
 	registry?: keyof typeof Registries;
 };
+
 
 export async function latest(name: string | unknown, options?: LatestOptions) {
 	const registry = Registries[options?.registry ?? "npm"];
 
 	const res = await fetch(`${registry}/${name}`);
+
 	const data = await res.json();
 
 	if (data.error) {
@@ -36,20 +38,20 @@ export async function latest(name: string | unknown, options?: LatestOptions) {
 	}
 
 	if (options?.all) {
-		return { name, value: data["dist-tags"] };
+		return { name, value: data?.["dist-tags"] };
 	}
 
-	return { name, value: data["dist-tags"].latest };
+	return { name, value: data?.["dist-tags"].latest };
 }
 
-type PackageJsonSchema = {
+export type PackageJsonSchema = {
 	name: string;
 	/** @example "1.1.1" | "1.2.12-abc" */
 	version: `${string}.${string}.${string}`;
 	[key: string]: string | Map<string, string>[] | unknown[] | unknown;
 };
 
-type CheckUpdateOptions = {
+export type CheckUpdateOptions = {
 	latest?: LatestOptions;
 };
 
