@@ -1,6 +1,6 @@
 {
 	"name": "@radhirasho/latest",
-	"main": "dist/index.js",
+	"main": "./dist/index.js",
 	"version": "1.0.16",
 	"author": "Radhi Rasho",
 	"license": "MIT",
@@ -13,16 +13,10 @@
 		"url": "git+https://github.com/RadhiRasho/latest.git"
 	},
 	"bin": {
-		"latest": "dist/latest.js"
+		"latest": "./dist/latest.js"
 	},
-	"keywords": [
-		"latest",
-		"npm",
-		"version",
-		"up-to-date"
-	],
+	"keywords": ["latest", "npm", "version", "up-to-date"],
 	"type": "module",
-	"types": "dis/index.d.ts",
 	"scripts": {
 		"build": "tsc --p ./tsconfig.json",
 		"prepublish": "npm run build"
