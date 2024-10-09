@@ -8,6 +8,7 @@
 	"publishConfig": {
 		"access": "public"
 	},
+	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/RadhiRasho/latest.git"
@@ -15,13 +16,7 @@
 	"bin": {
 		"latest": "./dist/latest.js"
 	},
-	"keywords": [
-		"latest",
-		"npm",
-		"version",
-		"up-to-date"
-	],
-	"type": "module",
+	"keywords": ["latest", "npm", "version", "up-to-date"],
 	"scripts": {
 		"build": "tsc --p ./tsconfig.json",
 		"prepublish": "npm run build"
