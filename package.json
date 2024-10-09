@@ -8,12 +8,7 @@
 		"@types/node": "latest",
 		"typescript": "latest"
 	},
-	"keywords": [
-		"latest",
-		"npm",
-		"version",
-		"up-to-date"
-	],
+	"keywords": ["latest", "npm", "version", "up-to-date"],
 	"license": "MIT",
 	"main": "./dist/index.js",
 	"name": "@radhirasho/latest",
@@ -30,5 +25,5 @@
 	},
 	"types": "./types",
 	"type": "module",
-	"version": "1.0.22"
+	"version": "1.0.21"
 }
