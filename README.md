@@ -132,7 +132,7 @@ Contributions are welcome! Please open an issue or submit a pull request on [Git
 
 ## License
 
-This project is licensed under the ISC License. See the LICENSE file for details.
+See the LICENSE file for details.
 
 ## Author
 
